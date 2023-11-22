@@ -1,0 +1,12 @@
+.contenerSquaredrate {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.squaredrate {
+    margin: 20px;
+    min-height: 100px;
+    min-width: 100px;
+    background-color: #555;
+}
