@@ -32,23 +32,33 @@ const button_add = document.querySelector('.button_add');
 const contenerSquaredrate = document.createElement('div')
 contenerSquaredrate.classList.add("contenerSquaredrate")
 contentEl.appendChild(contenerSquaredrate)
-let count = 0;
+
 button_add.addEventListener('click', (e) => {
-    count++;
+
     const squaredrateEl = document.createElement('div');
     squaredrateEl.classList.add('squaredrate')
-    squaredrateEl.textContent = count
+    squaredrateEl.textContent = contenerSquaredrate.children.length+1
     /*     const namb = document.createTextNode(count++); */
+
+  
 
     contenerSquaredrate.appendChild(squaredrateEl)
 });
 const button_delet = document.querySelector('.button_delet');
 button_delet.addEventListener('click', function () {
-    count--;
+
     const listEl = contenerSquaredrate.lastChild;
     if (listEl) {
         contenerSquaredrate.removeChild(listEl)
     } else {
         alert('Элементов нет ')
     }
+});
+
+const button_clone = document.querySelector('.button_clone');
+button_clone.addEventListener('click', function (e) {
+
+    const listEl = contenerSquaredrate.lastChild;
+    const clone =  listEl.cloneNode(true)
+    contenerSquaredrate.appendChild(clone)
 });
